@@ -53,9 +53,10 @@ STATIC bool repl_display_debugging_info = 0;
 #define EXEC_FLAG_PRINT_EOF (1)
 #define EXEC_FLAG_ALLOW_DEBUGGING (2)
 #define EXEC_FLAG_IS_REPL (4)
-#define EXEC_FLAG_SOURCE_IS_RAW_CODE (8)
-#define EXEC_FLAG_SOURCE_IS_VSTR (16)
-#define EXEC_FLAG_SOURCE_IS_FILENAME (32)
+#define EXEC_FLAG_RERAISE (8)
+#define EXEC_FLAG_SOURCE_IS_RAW_CODE (16)
+#define EXEC_FLAG_SOURCE_IS_VSTR (32)
+#define EXEC_FLAG_SOURCE_IS_FILENAME (64)
 
 // parses, compiles and executes the code in the lexer
 // frees the lexer before returning
@@ -549,6 +550,9 @@ friendly_repl_reset:
 
 int pyexec_file(const char *filename) {
     return parse_compile_execute(filename, MP_PARSE_FILE_INPUT, EXEC_FLAG_SOURCE_IS_FILENAME);
+}
+int pyexec_str(vstr_t *str) {
+    return parse_compile_execute(str, MP_PARSE_FILE_INPUT, EXEC_FLAG_RERAISE | EXEC_FLAG_SOURCE_IS_VSTR);
 }
 
 int pyexec_file_if_exists(const char *filename) {
