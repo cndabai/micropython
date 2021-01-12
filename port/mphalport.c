@@ -63,10 +63,18 @@ int mp_hal_stdin_rx_chr(void) {
 // Send string of given length
 void mp_hal_stdout_tx_strn(const char *str, mp_uint_t len) {
     mp_putsn(str, len);
+#ifdef PKG_USING_OPENMV_CP
+    extern void serial_dbg_send_strn(const char *str, int len);
+    serial_dbg_send_strn(str, len);
+#endif
 }
 
 void mp_hal_stdout_tx_strn_stream(const char *str, size_t len) {
     mp_putsn_stream(str, len);
+#ifdef PKG_USING_OPENMV_CP
+    extern void serial_dbg_send_strn_cooked(const char *str, int len);
+    serial_dbg_send_strn_cooked(str, len);
+#endif
 }
 
 mp_uint_t mp_hal_ticks_us(void) {
@@ -90,7 +98,7 @@ void mp_hal_delay_us(mp_uint_t us) {
         if (dt >= dtick) {
             break;
         }
-        mp_handle_pending();
+        mp_handle_pending(true);
     }
 }
 

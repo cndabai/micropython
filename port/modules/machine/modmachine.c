@@ -126,10 +126,31 @@ STATIC mp_obj_t machine_soft_reset(void) {
 }
 MP_DEFINE_CONST_FUN_OBJ_0(machine_soft_reset_obj, machine_soft_reset);
 
+/*
+* @param clkid - range 0~127 (e.g 0:SYSCLK 1:HCLK 2:PCLK1 etc)
+*
+* @return 0 - ok, -1 - no such clock
+*/
+RT_WEAK int mp_port_get_freq(int clkid, int *freq)
+{
+    return -1;
+}
+
 STATIC mp_obj_t machine_freq(void) {
-    //TODO
-    MP_RTT_NOT_IMPL_PRINT;
-    return MP_OBJ_SMALL_INT_VALUE(0);
+    int i;
+    mp_obj_list_t *ret_list = m_new(mp_obj_list_t, 1);
+    mp_obj_list_init(ret_list, 0);
+    int freq;
+
+    for (i = 0; i < 128; i ++)
+    {
+        if (mp_port_get_freq(i, &freq) != 0)
+            break;
+
+        mp_obj_list_append(ret_list, mp_obj_new_int(freq));
+    }
+
+    return MP_OBJ_FROM_PTR(ret_list);
 }
 MP_DEFINE_CONST_FUN_OBJ_0(machine_freq_obj, machine_freq);
 
