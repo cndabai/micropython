@@ -11,7 +11,7 @@
 ##### **machine.info**()  
   显示关于系统介绍和内存占用等信息。
 
-##### **machine.rest**()  
+##### **machine.reset**()  
   重启设备，类似于按下复位按钮。
 
 ##### **machine.reset_cause**()  
