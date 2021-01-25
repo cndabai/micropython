@@ -31,6 +31,8 @@ WHITE BLACK BLUE BRED GRED GBLUE RED MAGENTA GREEN CYAN YELLOW BROWN BRRED GRAY 
 
 向指定的位置（x, y）画点，点的颜色为 color 指定的颜色，可指定的颜色和上一个功能相同。
 
+> 注意：(x, y)  坐标不要超过实际范围，使用下面的方法对坐标进行操作时同样需要遵循此限制。
+
 #### **LCD.text**(str, x, y, size)
 
 在指定的位置（x,y）写入字符串，字符串由 str 指定，字体的大小由 size 指定，size 的大小可为 16，24，32。
