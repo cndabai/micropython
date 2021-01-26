@@ -11,10 +11,10 @@
 ##### **machine.info**()  
   显示关于系统介绍和内存占用等信息。
 
-##### **machine.reset**()  
+##### **machine.reset**()  注：暂未实现
   重启设备，类似于按下复位按钮。
 
-##### **machine.reset_cause**()  
+##### **machine.reset_cause**()  注：暂未实现
   获得复位的原因，查看可能的返回值的常量。
 
 #### 中断相关函数
@@ -30,31 +30,11 @@
 ##### **machine.freq**()  
   返回 `CPU` 的运行频率。
 
-##### **machine.idle**()  
+##### **machine.idle**()  注：暂未实现
   阻断给 `CPU` 的时钟信号，在较短或者较长的周期里减少功耗。当中断发生时，外设将继续工作。
 
-##### **machine.sleep**()  
+##### **machine.sleep**()  注：暂未实现
   停止 `CPU` 并禁止除了 `WLAN` 之外的所有外设。系统会从睡眠请求的地方重新恢复工作。为了确保唤醒一定会发生，应当首先配置中断源。
 
-##### **machine.deepsleep**()  
+##### **machine.deepsleep**()  注：暂未实现
   停止 `CPU` 和所有外设（包括网络接口）。执行从主函数中恢复，就像被复位一样。复位的原因可以检查 `machine.DEEPSLEEP` 参数获得。为了确保唤醒一定会发生，应该首先配置中断源，比如一个引脚的变换或者 `RTC` 的超时。
-
-### 常数
-
-- `IRQ` 唤醒值
-#### **machine.IDLE**
-#### **machine.SLEEP**
-#### **machine.DEEPSLEEP**
-
-- 复位
-#### **machine.PWRON_RESET **
-#### **machine.HARD_RESET **
-#### **machine.WDT_RESET **
-#### **machine.DEEPSLEEP_RESET **
-#### **machine.SOFT_RESET**
-
-- 唤醒
-#### **machine.WLAN_WAKE**
-#### **machine.PIN_WAKE**
-#### **machine.RTC_WAKE**
-
