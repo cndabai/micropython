@@ -8,23 +8,11 @@ This is a port of `MicroPython` on RT-Thread, which can run on **RT-Thread 3.0**
 
 If it is the first time to come into contact with RT-Thread MicroPython, it is recommended that you use RT-Thread officially supported development boards to get started quickly. These development boards have complete firmware functions and provide source code, suitable for introductory learning, and officially support development boards [firmware download Please click on me](https://www.rt-thread.org/qa/forum.php?mod=viewthread&tid=12305&extra=page%3D1%26filter%3Dtypeid%26typeid%3D20).
 
-### 1.1 Directory structure
-
-| Name | Description |
-| ---- | ---- |
-| docs | Document directory, including getting started guide and development manual |
-| drivers | MicroPython source code directory |
-| extmod | MicroPython Source Code Directory |
-| lib | MicroPython source code directory |
-| py | MicroPython source code directory |
-| port | Porting code directory |
-| LICENSE | Micropython MIT License |
-
-### 1.2 License
+### 1.1 License
 
 RT-Thread MicroPython follows the MIT license, see the `LICENSE` file for details.
 
-### 1.3 Dependency
+### 1.2 Dependency
 
 - RT-Thread 3.0+
 
@@ -32,7 +20,7 @@ RT-Thread MicroPython follows the MIT license, see the `LICENSE` file for detail
 
 To use `MicroPython package`, you need to select it in the RT-Thread package manager. The specific path is as follows:
 
-![elect_micropytho](./docs/assets/select_micropython.png)
+![select-rtthread](docs/assets/select_mp.png)
 
 Then let the RT-Thread package manager automatically update, or use the `pkgs --update` command to update the package to the BSP.
 

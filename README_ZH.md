@@ -8,23 +8,11 @@
 
 如果是第一次接触 RT-Thread MicroPython，推荐你先通过 RT-Thread 官方支持的开发板来快速上手，这些开发板的固件功能完善并提供源代码，适合入门学习，官方支持开发板 [固件下载请点我](https://www.rt-thread.org/qa/forum.php?mod=viewthread&tid=12305&extra=page%3D1%26filter%3Dtypeid%26typeid%3D20)。
 
-### 1.1 目录结构
-
-| 名称 | 说明 |
-| ---- | ---- |
-| docs  | 文档目录，包括入门指南和开发手册 |
-| drivers | MicroPython 源代码目录 |
-| extmod | MicroPython 源代码目录 |
-| lib | MicroPython 源代码目录 |
-| py | MicroPython 源代码目录 |
-| port | 移植代码目录 |
-| LICENSE | Micropython MIT 许可证 |
-
-### 1.2 许可证
+### 1.1 许可证
 
 RT-Thread MicroPython  遵循 MIT 许可，详见 `LICENSE` 文件。
 
-### 1.3 依赖
+### 1.2 依赖
 
 - RT-Thread 3.0+
 
@@ -32,7 +20,7 @@ RT-Thread MicroPython  遵循 MIT 许可，详见 `LICENSE` 文件。
 
 使用 `MicroPython package` 需要在 RT-Thread 的包管理器中选择它，具体路径如下：
 
-![elect_micropytho](./docs/assets/select_micropython.png)
+![select-rtthread](docs/assets/select_mp.png)
 
 然后让 RT-Thread 的包管理器自动更新，或者使用 `pkgs --update` 命令更新包到 BSP 中。
 
