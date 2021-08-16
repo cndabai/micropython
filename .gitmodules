@@ -1,4 +1,4 @@
 [submodule "micropython"]
 	path = micropython
 	url = https://github.com/cndabai/micropython-1.git
-	branch = test
+	branch = master
