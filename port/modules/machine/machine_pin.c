@@ -92,7 +92,7 @@ mp_obj_t mp_pin_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, 
 
     machine_pin_obj_t *pin = m_new_obj(machine_pin_obj_t);
     if (!pin) {
-        mp_raise_OSError(ENOMEM);
+        mp_raise_OSError(MP_ENOMEM);
     }
 
     strncpy(pin->name, pin_name, sizeof(pin->name));
