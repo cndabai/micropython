@@ -34,6 +34,7 @@
 
 #include <stdarg.h>
 #include "machine_uart.h"
+#include "rtdevice.h"
 
 #ifdef MICROPYTHON_USING_MACHINE_UART
 
